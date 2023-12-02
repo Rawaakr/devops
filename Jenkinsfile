@@ -41,7 +41,7 @@ pipeline {
                     sh 'docker push rawaakr1/imgdev1:latest'
 
                     // Déployer l'application avec docker-compose
-                    sh 'docker-compose up -d'
+                    sh 'docker-compose up'
 		    sh 'until curl -f http://localhost:3000; do sleep 10; done'	                
 		}
             }
