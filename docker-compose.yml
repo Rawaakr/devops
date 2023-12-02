@@ -5,3 +5,7 @@ services:
     ports:
       - "3000:3000"
 
+  jenkins:
+    image: jenkins/jenkins
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
