@@ -34,11 +34,11 @@ pipeline {
                 script {
                     // Authentification Docker
                     withCredentials([string(credentialsId: 'dockeraccess', variable: 'DOCKER_HUB_CREDENTIALS')]) {
-                        sh "docker login -u <rawaakr1> -p ${DOCKER_HUB_CREDENTIALS} docker.io"
+                        sh "docker login -u rawaakr1 -p ${DOCKER_HUB_CREDENTIALS} docker.io"
                     }
 
                     // Poussez l'image vers Docker Hub
-                    sh 'docker push rawaakr1/imgdev2'
+                    sh 'docker push rawaakr1/imgdev1:latest'
 
                     // Déployer l'application avec docker-compose
                     sh 'docker-compose up -d'
