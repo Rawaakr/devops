@@ -42,7 +42,8 @@ pipeline {
 
                     // Déployer l'application avec docker-compose
                     sh 'docker-compose up -d'
-                }
+		    sleep time: 30, unit: 'SECONDS'	                
+		}
             }
         }
     }
