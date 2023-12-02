@@ -42,7 +42,7 @@ pipeline {
 
                     // Déployer l'application avec docker-compose
                     sh 'docker-compose up -d'
-		    sleep time: 30, unit: 'SECONDS'	                
+		    sh 'until curl -f http://localhost:3000; do sleep 10; done'	                
 		}
             }
         }

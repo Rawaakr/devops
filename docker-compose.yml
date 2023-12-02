@@ -4,7 +4,11 @@ services:
     image: rawaakr1/imgdev1:latest
     ports:
       - "3000:3000"
-
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
   jenkins:
     image: jenkins/jenkins
     volumes:
