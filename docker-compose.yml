@@ -3,4 +3,5 @@ services:
   app:
     image: rawaakr1/imgdev1
     ports:
-      -"3000:3000"
+      - "3000:3000"
+
